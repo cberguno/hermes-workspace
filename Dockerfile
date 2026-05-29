@@ -17,8 +17,7 @@ WORKDIR /app
 
 # Install deps (cache-friendly: copy only manifests first)
 COPY package.json pnpm-lock.yaml* ./
-RUN pnpm install --frozen-lockfile --no-scripts
-# Copy sources and build
+RUN pnpm install --frozen-lockfile# Copy sources and build
 COPY . .
 RUN pnpm build
 
